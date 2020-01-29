@@ -2,6 +2,7 @@ package indoar.co.earthquack;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import static android.content.ContentValues.TAG;
 
@@ -47,11 +49,12 @@ public class earthquakeAdapter extends ArrayAdapter<earthquake> {
         magnitudeView.setText(magnitudeFormator(currentEarthquake.getmMagnitude()));
 
 
-
         //TODO: color is not changing according to the magnitude
         GradientDrawable magnitudeCircle = (GradientDrawable) magnitudeView.getBackground();
-        int magnitudeColor = getMagnitudeColor(currentEarthquake.getmMagnitude());
+        int magnitudeColor =  getMagnitudeColor(currentEarthquake.getmMagnitude());
+
         magnitudeCircle.setColor(magnitudeColor);
+
 
 
         //location View
@@ -143,6 +146,6 @@ public class earthquakeAdapter extends ArrayAdapter<earthquake> {
             default:
                 throw new IllegalStateException("Unexpected value: " + mag);
         }
-        return colorResourceId;
+        return ContextCompat.getColor(getContext(), colorResourceId);
     }
 }

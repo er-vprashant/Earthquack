@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
             RequestQueue queue = Volley.newRequestQueue(this);
-            String url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=6&orderby=magnitude";
+            String url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10&minmag=1&limit=30";
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                     new Response.Listener<String>() {
                         @Override
