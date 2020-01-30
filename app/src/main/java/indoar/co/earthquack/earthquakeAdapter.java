@@ -2,9 +2,7 @@ package indoar.co.earthquack;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +15,6 @@ import java.util.Date;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-
-import static android.content.ContentValues.TAG;
 
 public class earthquakeAdapter extends ArrayAdapter<earthquake> {
 
@@ -39,7 +35,7 @@ public class earthquakeAdapter extends ArrayAdapter<earthquake> {
         View ItemListView = convertView;
 
         if (ItemListView == null) {
-            ItemListView = LayoutInflater.from(getContext()).inflate(R.layout.earthquake_list_item, parent, false);
+            ItemListView = LayoutInflater.from(getContext()).inflate(R.layout.earthquake_adapter, parent, false);
         }
 
         earthquake currentEarthquake = getItem(position);
