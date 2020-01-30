@@ -22,4 +22,5 @@
         app:headerLayout="@layout/nav_header_earthquake_homepage"
         app:menu="@menu/activity_earthquake_homepage_drawer" />
 
+
 </androidx.drawerlayout.widget.DrawerLayout>
